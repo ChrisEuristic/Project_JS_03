@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/JS_20230118001/styles/style20230118001.css">
+  <script src="/JS_20230118001/scripts/index20230118001.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    주사위 게임
+  </header>
+  <main id="content">
+    <section id="s1">
+      주사위를 굴려주세요.
+    </section>
+
+    <section id="s2">
+      <form>
+        <fieldset>
+          <legend id="chooseNumber">번호선택</legend>
+          <input type="radio" name="dicePoint" value="1" id="dice1" onclick="getDicePoint(1)"><label for="dice1">1</label>
+          <input type="radio" name="dicePoint" value="2" id="dice2" onclick="getDicePoint(2)"><label for="dice2">2</label>
+          <input type="radio" name="dicePoint" value="3" id="dice3" onclick="getDicePoint(3)"><label for="dice3">3</label>
+          <input type="radio" name="dicePoint" value="4" id="dice4" onclick="getDicePoint(4)"><label for="dice4">4</label>
+          <input type="radio" name="dicePoint" value="5" id="dice5" onclick="getDicePoint(5)"><label for="dice5">5</label>
+          <input type="radio" name="dicePoint" value="6" id="dice6" onclick="getDicePoint(6)"><label for="dice6">6</label>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="s3">
+      
+    </section>
+
+    <section id="s4">
+      <button id="bt1" onclick="btnChooseDice();">주사위 선택</button>
+      <button id="bt2" onclick="showDice();">확인</button>
+    </section>
+  </main>
+</body>
+</html>
