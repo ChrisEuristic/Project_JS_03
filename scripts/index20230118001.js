@@ -29,6 +29,7 @@ let userChooseDice;
 
 const showDice = () => {
   show("none", "block", "none", "block", "none");
+  const form = document.querySelector("#form1").reset ();
 };
 
 const show = (dspS1, dspS2, dspS3, dspBt1, dspBt2) => {
@@ -37,6 +38,7 @@ const show = (dspS1, dspS2, dspS3, dspBt1, dspBt2) => {
   const s3 = document.querySelector("#s3");
   const bt1 = document.querySelector("#bt1");
   const bt2 = document.querySelector("#bt2");
+  
 
   s1.style.display = dspS1;
   s2.style.display = dspS2;
@@ -50,6 +52,10 @@ const getDicePoint = (dicePoint) => {
 };
 
 const btnChooseDice = () => {
+  console.log("parentElement");
+  console.log(document.querySelector("#s1").parentElement.parentElement);
+  console.log("parentNode");
+  console.log(document.querySelector("#s1").parentNode.parentNode.chi);
   let dicePoint;
   const diceLocation = document.querySelector("#s1");
   const oxAnswer = document.querySelector("#s3");
