@@ -4,41 +4,92 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="./styles/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="./scripts/main.js"></script>
-  <title>Document</title>
+  <title>JS Project : Dice Game</title>
 </head>
 <body>
-  <header>
-    주사위 게임
-  </header>
-  <main id="content">
-    <section id="s1">
-      주사위를 굴려주세요.
-    </section>
-    
-    <section id="s2">
-      <form id="form1">
-        <fieldset>
-          <legend id="chooseNumber">번호선택</legend>
-          <input type="radio" name="dicePoint" value="1" id="dice1" onclick="getDicePoint(1)"><label for="dice1">1</label>
-          <input type="radio" name="dicePoint" value="2" id="dice2" onclick="getDicePoint(2)"><label for="dice2">2</label>
-          <input type="radio" name="dicePoint" value="3" id="dice3" onclick="getDicePoint(3)"><label for="dice3">3</label>
-          <input type="radio" name="dicePoint" value="4" id="dice4" onclick="getDicePoint(4)"><label for="dice4">4</label>
-          <input type="radio" name="dicePoint" value="5" id="dice5" onclick="getDicePoint(5)"><label for="dice5">5</label>
-          <input type="radio" name="dicePoint" value="6" id="dice6" onclick="getDicePoint(6)"><label for="dice6">6</label>
-        </fieldset>
-      </form>
-    </section>
-
-    <section id="s3">
-      
-    </section>
-
-    <section id="s4">
-      <button id="bt1" onclick="btnChooseDice();">주사위 선택</button>
-      <button id="bt2" onclick="showDice();">확인</button>
-    </section>
-  </main>
+  <div id="gameBoard" class="container-md unvisible openingAnim1 openingBodyAnim">
+    <div id="title" class="row max-width768 no-margin">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div class="font-solitreo-1 unvisible openingAnim2"><a href="./index.html">Dice Game</a></div>
+      </div>
+      <div class="col-2">
+        <nav id="etcButtonNav" class="navbar bg-body-tertiary no-padding unvisible openingAnim3">
+          <div id="etcButtonContainer" class="container-fluid no-padding">
+            <button id="etcButton" class="navbar-toggler no-margin" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="width: 200px;">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title font-solitreo" id="offcanvasNavbarLabel">Other Project</h5>
+                <button id="closeButton" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body">
+                <ul class="navbar-nav flex-grow-1 pe-3" style="text-align: left;">
+                  <li class="nav-item">
+                    <a class="nav-link active font-solitreo underscoreAnim inline" href="https://chriseuristic.github.io/Project_JS_01_HomeWork/">HTML : My Intro</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active font-solitreo underscoreAnim inline" href="./index.html">JS : Dice Game</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active font-solitreo underscoreAnim inline" href="#">JS : Symbol of Busan</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active font-solitreo underscoreAnim inline" href="#">JS : Bomb Game</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <div id="scoreBoard" class="row font-solitreo">
+      <div id="scoreBoard-Game" class="col-3"></div>
+      <div id="scoreBoard-Win" class="col-3"></div>
+      <div id="scoreBoard-Lose" class="col-3"></div>
+      <div id="scoreBoard-Rate" class="col-3"></div>
+    </div>
+    <div class="row">
+      <section id="s1">
+        
+      </section>
+    </div>
+    <div class="row">
+      <section id="s2">
+        <form id="gameForm">
+          <fieldset id="gameFieldset">
+            <div class="row">
+              <legend id="chooseNumber" class="font-solitreo-1">Choose dice</legend>
+            </div>
+            <div id="gameDice" class="row no-padding">
+              <input type="radio" name="dicePoint" value="1" id="dice1" onclick="getDicePoint(1)"><label for="dice1">●</label>
+              <input type="radio" name="dicePoint" value="2" id="dice2" onclick="getDicePoint(2)"><label for="dice2">●&nbsp;&nbsp;&nbsp;●</label>
+              <input type="radio" name="dicePoint" value="3" id="dice3" onclick="getDicePoint(3)"><label for="dice3">● ● ●</label>
+              <input type="radio" name="dicePoint" value="4" id="dice4" onclick="getDicePoint(4)"><label for="dice4">●&nbsp;&nbsp;&nbsp;&nbsp;●<br><br>●&nbsp;&nbsp;&nbsp;&nbsp;●</label>
+              <input type="radio" name="dicePoint" value="5" id="dice5" onclick="getDicePoint(5)"><label for="dice5">●&nbsp;&nbsp;&nbsp;&nbsp;●<br>●<br>●&nbsp;&nbsp;&nbsp;&nbsp;●</label>
+              <input type="radio" name="dicePoint" value="6" id="dice6" onclick="getDicePoint(6)"><label for="dice6">● ● ● <br><br>● ● ●</label>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </div>
+    <div class="row">
+      <section id="s3">
+        <button id="dropDiceButton" class="font-solitreo dropButtonAnim unvisible" onclick="dropDiceButton()">Start Game</button>
+      </section>
+    </div>
+    <div class="row">
+      <section id="s4">
+        <button id="bt1" class="font-solitreo" onclick="btnChooseDice();">Choose</button>
+        <button id="bt2" class="font-solitreo" onclick="showDice();">Replay</button>
+      </section>
+    </div>
+  </div>
 </body>
 </html>

@@ -1,16 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Solitreo&display=swap');
+
 * {
   margin: 0px;
   padding: 0px;
 }
 
-header {
+body {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited, a:hover, a:active {
+  color: white;
+}
+
+.font-solitreo-1 {
+  font-family: 'Solitreo', cursive;
+  font-size: 40px;
+  padding-top: 12px;
+}
+
+.font-solitreo {
+  font-family: 'Solitreo', cursive;
+  padding-top: 7px;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.bgcolor-chrisblack {
+  background-color: #282828;
+}
+
+.unvisible {
+  opacity: 0;
+}
+
+#gameBoard {
+  border: solid 1px #282828;
+  border-radius: 50px 0px 10px 10px;
+  padding: 0px;
+  margin: 8px;
+  max-width: 768px;
+  height: 90px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+#title {
   width: 100%;
   height: 10vh;
+  border-radius: 45px 0px 10px 10px;
   background-color: #282828;
   color: white;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;  
+
+}
+
+.max-width768 {
+  max-width: 768px;
+}
+
+#etcButtonNav {
+  position: relative;
+  bottom: 2px;
+  width: 56px;
+  border-radius: 7px;
+  outline: none;
+}
+
+#etcButton:focus, #closeButton:focus {
+  background-color: transparent;
+  outline: none;
+  border: none; box-shadow: none;
+}
+
+#etcButton:hover, #etcButton:active, #closeButton:hover, #closeButton:active {
+  background-color: #28282836;
+  outline: none;
+  border: none; box-shadow: none;
+}
+
+#offcanvasNavbarLabel {
+  position: relative;
+  top: 3px;
+}
+
+.offcanvas-body {
+  margin-top: 50px;
 }
 
 main {
@@ -35,7 +123,7 @@ button {
 }
 
 button:hover, button:active{
-  background-color: red;
+  background-color: #141414;
 }
 
 #chooseNumber {
@@ -49,28 +137,182 @@ input[type=radio] {
 
 input[type="radio"] + label {
   display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin: 5px;
   padding: 8px 10px;
   border: 1px solid #dfdfdf;
+  border-radius: 10px;
   background-color: #ffffff;
+  font-size: 30px;
   text-align: center;
   cursor: pointer;
-}
-
-input[type="radio"]:checked + label {
-  background-color: #113a6b;
-  color: #ffffff;
-}
-
-fieldset {
-  width: 60%; 
-  padding: 2vw 2vw;
-  font-size: 2vw;
-  border: 1px solid #dfdfdf;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+input[type="radio"]:hover + label {
+  background-color: #28282836;
+  color: #ffffff;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #282828;
+  color: #ffffff;
+}
+
+#scoreBoard {
+  margin-top: 20px;
+}
+
+#s1 > img {
+  margin-top: 104px;
+}
+
+#s3 > img {
+  margin: 53px;
+}
+
+fieldset {
+  width: 80%;
+  margin: 8px;
+  padding: 2vw 2vw;
+  font-size: 2vw;
+  border: none;
+  display: block;
+}
+
 section {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+ul > li {
+  margin-top: 10px;
+}
+
+.inline {
+  display: inline-block;
+  padding: 0px 8px 0px 0px;
+}
+
+.underscoreAnim {
+  border-bottom: solid 1px transparent;
+  padding-bottom: 0px;
+}
+
+#gameForm {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+#gameDice {
+  display: flex;
+  justify-content: center;
+}
+
+
+.underscoreAnim:hover {
+  animation-duration: 0.5s;
+  animation-name: slideUnderscore;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideUnderscore {
+  from {
+    color: #282828;
+    border-bottom: solid 1px transparent;
+  }
+
+  to {
+    color: red;
+    border-bottom: solid 1px #28282888;
+  }
+}
+
+.openingAnim1 {
+  animation-duration: 1s;
+  animation-name: opening1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.openingBodyAnim {
+  animation-duration: 1s, 2s, 2s;
+  animation-name: opening1, openingStretch1, openingStretch2;
+  animation-delay: 0s, 2s, 3s;
+  animation-timing-function: linear, ease-out, ease-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes opening1 {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes openingStretch1 {
+  50% { border-radius: 50px 0px 300px 300px; }
+  to { height: 800px; border-radius: 55px 0px 300px 300px; }
+}
+
+@keyframes openingStretch2 {
+  from { border-radius: 50px 0px 300px 300px; }
+  to { border-radius: 50px 0px 10px 10px; }
+}
+
+.openingAnim2 {
+  animation-duration: 1s;
+  animation-name: opening2;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes opening2 {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.openingAnim3 {
+  animation-duration: 2s;
+  animation-name: opening3;
+  animation-delay: 3.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes opening3 {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.dropButtonAnim {
+  margin-top: 500px;
+  animation-duration: 0.5s;
+  animation-name: dropButton;
+  animation-delay: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes dropButton {
+  to { opacity: 1; }
 }

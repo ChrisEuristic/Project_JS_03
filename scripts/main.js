@@ -26,10 +26,11 @@ const addButton = () => {
 */
 
 let userChooseDice;
+let winCounter, loseCounter;
 
 const showDice = () => {
   show("none", "block", "none", "block", "none");
-  const form = document.querySelector("#form1").reset ();
+  const form = document.querySelector("#gameForm").reset ();
 };
 
 const show = (dspS1, dspS2, dspS3, dspBt1, dspBt2) => {
@@ -51,14 +52,20 @@ const getDicePoint = (dicePoint) => {
   userChooseDice = dicePoint;
 };
 
+const dropDiceButton = () => {
+  const dropDiceButtonObject = document.querySelector("#dropDiceButton");
+  dropDiceButtonObject.remove(self);
+  show("none", "block", "none", "block", "none");
+};
+
 const btnChooseDice = () => {
-  console.log("parentElement");
-  console.log(document.querySelector("#s1").parentElement.parentElement);
-  console.log("parentNode");
-  console.log(document.querySelector("#s1").parentNode.parentNode.chi);
   let dicePoint;
   const diceLocation = document.querySelector("#s1");
   const oxAnswer = document.querySelector("#s3");
+  const scoreBoardGame = document.querySelector("#scoreBoard-Game");
+  const scoreBoardWin = document.querySelector("#scoreBoard-Win");
+  const scoreBoardLose = document.querySelector("#scoreBoard-Lose");
+  const scoreBoardRate = document.querySelector("#scoreBoard-Rate");
 
   console.log(userChooseDice);
   dicePoint = Math.floor(Math.random() * 6 + 1);
@@ -67,12 +74,24 @@ const btnChooseDice = () => {
 
   if(userChooseDice == dicePoint){
     oxAnswer.innerHTML = `<img src="./image/o.png">`;
+    winCounter++;
+    scoreBoardGame.innerHTML = `Game : ${winCounter+loseCounter}`;
+    scoreBoardWin.innerHTML = `Win : ${winCounter}`;
+    scoreBoardLose.innerHTML = `Lose : ${loseCounter}`;
+    scoreBoardRate.innerHTML = `Rate : ${Math.round((winCounter/(winCounter+loseCounter))*100)}%`;
   }
   else{
     oxAnswer.innerHTML = `<img src="./image/x.png">`;
+    loseCounter++;
+    scoreBoardGame.innerHTML = `Game : ${winCounter+loseCounter}`;
+    scoreBoardWin.innerHTML = `Win : ${winCounter}`;
+    scoreBoardLose.innerHTML = `Lose : ${loseCounter}`;
+    scoreBoardRate.innerHTML = `Rate : ${Math.round((winCounter/(winCounter+loseCounter))*100)}%`;
   }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  show("none", "block", "none", "block", "none");
+  show("none", "none", "block", "none", "none");
+  winCounter = 0;
+  loseCounter = 0;
 });
