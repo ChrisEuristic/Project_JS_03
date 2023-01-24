@@ -14,7 +14,7 @@ a {
   text-decoration: none;
 }
 
-a:visited, a:hover, a:active {
+a:visited, a:hover, a:active, a:checked {
   color: white;
 }
 
